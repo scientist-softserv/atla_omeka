@@ -1274,7 +1274,7 @@ Table of Contents
      }
      .winter .exhibit-page-nav {background-color: #4b6569; }
 
-     /* style to make bottom exhibit nav into buttons - need to find a way to change link text
+     /* style to make bottom exhibit nav into buttons*/
 
      .winter #exhibit-nav-prev a,.winter #exhibit-nav-next a, .winter #exhibit-nav-up a{
           background-color: #E65A3A;
@@ -1296,7 +1296,7 @@ Table of Contents
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
-     }*/
+     }
 
      div#exhibit-page-navigation {margin-top:2em;}
 
@@ -2033,20 +2033,20 @@ Table of Contents
                padding-right: 1em;
           }
 
-          .exhibits #primary,
-          .exhibits #exhibit-blocks,
+          .exhibits.show #content #exhibit-page-navigation {
+               display:flex;
+               flex-direction: row;
+               justify-content: space-between;
+               align-items:center;
+          }
 
-          /*.exhibits #exhibit-page-navigation {
-               width: 67%;
-               float: left;
-               margin-right: 1.69492%;
-               margin-left: 0;
-               padding:0;
-          }*/
+          .exhibits.show #content #exhibit-page-navigation #exhibit-nav-prev,.exhibits.show #content #exhibit-page-navigation #exhibit-nav-next{width:160px;}
 
-          .exhibits.show #content #exhibit-page-navigation #exhibit-nav-prev,.exhibits.show #content #exhibit-page-navigation #exhibit-nav-next{width:25%;}
+          .exhibits.show #content #exhibit-page-navigation #exhibit-nav-up {width:auto;}
 
-          .exhibits.show #content #exhibit-page-navigation #exhibit-nav-up {width:50%;}
+          div#exhibit-nav-next {order:3;}
+
+          .exhibits.show #content #exhibit-page-navigation #exhibit-nav-next {margin-bottom:0;}
 
           .exhibits #exhibit-pages:not(.full) {
                width: 25%;
