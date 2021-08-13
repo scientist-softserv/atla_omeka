@@ -9,6 +9,7 @@ echo head(array(
    <div id="site-title">
         <?php echo link_to_home_page(theme_logo()); ?>
    </div>
+   <button class="back-to-all"><?php echo link_to_home_page('All Exhibitions'); ?></button>
    <h1 class="exhibit-title"><?php echo metadata('exhibit', 'title'); ?></h1>
    <div id="search-container" role="search">
         <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>

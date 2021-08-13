@@ -986,6 +986,7 @@ Table of Contents
           font-weight:700;
           padding-top:0;
           padding-bottom:0;
+          text-align:left;
      }
      .winter div#site-title, .winter #content,.winter #custom-footer-text, .winter #atla_inner, .winter #atla_footer {
           max-width:1170px;
@@ -1224,6 +1225,23 @@ Table of Contents
           max-width:600px;
      }
 
+     .winter header {position:relative;}
+
+     button.back-to-all {
+          background:transparent;
+          text-transform:capitalize;
+          position:absolute;
+          top:8px;
+          right:0;
+     }
+
+     button.back-to-all a {
+          background-color: #efefef;
+          padding: .75em;
+          border-radius:2px;
+     }
+
+
      .winter .exhibits.browse #content .exhibit h2 a {
           padding:0em 0.75em;
           display:inline-block;
@@ -1276,6 +1294,11 @@ Table of Contents
 
      /* style to make bottom exhibit nav into buttons*/
 
+     .winter .exhibits.show #content #exhibit-page-navigation {
+          display:flex;
+          flex-direction:column;
+     }
+
      .winter #exhibit-nav-prev a,.winter #exhibit-nav-next a, .winter #exhibit-nav-up a{
           background-color: #E65A3A;
           border: none;
@@ -1299,6 +1322,18 @@ Table of Contents
      }
 
      div#exhibit-page-navigation {margin-top:2em;}
+
+     .winter .exhibits.show #content #exhibit-page-navigation {
+          background-color: rgba(223, 226, 226, 0.5);
+          }
+
+.winter .exhibits.show #content #exhibit-page-navigation a {display:block;}
+
+.winter .exhibits.show #content #exhibit-page-navigation #exhibit-nav-next {margin-bottom:0;}
+
+.winter .exhibits.show #content #exhibit-page-navigation span {padding:1em;}
+
+
 
      .winter footer {
           padding-top: 1.5em;
@@ -2027,18 +2062,21 @@ Table of Contents
                margin:0 auto;
           }
 
+          button.back-to-all {top:38px;}
+
 
           nav.top, #content, footer, .winter #content {
                padding-left: 1em;
                padding-right: 1em;
           }
 
-          .exhibits.show #content #exhibit-page-navigation {
+          .winter .exhibits.show #content #exhibit-page-navigation {
                display:flex;
                flex-direction: row;
                justify-content: space-between;
-               align-items:center;
           }
+
+
 
           .exhibits.show #content #exhibit-page-navigation #exhibit-nav-prev,.exhibits.show #content #exhibit-page-navigation #exhibit-nav-next{width:160px;}
 
