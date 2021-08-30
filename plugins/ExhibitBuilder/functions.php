@@ -362,6 +362,7 @@ function exhibit_builder_define_acl($args)
 
     $acl->allow(null, 'ExhibitBuilder_Exhibits', array('edit', 'delete'),
         new Omeka_Acl_Assert_Ownership);
+    $acl->allow('researcher', 'ExhibitBuilder_Exhibits', 'showNotPublic');
 }
 
 /**
