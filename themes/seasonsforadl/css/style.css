@@ -1079,7 +1079,7 @@ Table of Contents
      .winter #content #exhibit-child-pages a:visited,
      .winter #content #login-links a a:link,
      .winter #content #login-links a a:visited {
-          color: #def9ff; }
+          color: #E65A3A; }
      .winter #content .items-nav a:hover, .winter #content .items-nav a:active, .winter #content .secondary-nav a:hover, .winter #content .secondary-nav a:active,
      .winter #content #secondary-nav a:hover,
      .winter #content #secondary-nav a:active,
@@ -1333,7 +1333,7 @@ Table of Contents
 
 .winter .exhibits.show #content #exhibit-page-navigation span {padding:1em;}
 
-
+.winter .exhibits.show #content #exhibit-page-navigation #exhibit-nav-up a, .winter .exhibits.show #content #exhibit-page-navigation #exhibit-nav-up br {display:none;}
 
      .winter footer {
           padding-top: 1.5em;
