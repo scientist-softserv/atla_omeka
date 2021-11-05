@@ -27,4 +27,4 @@ else
     CONFIG_FILE=$3
 fi
 
-helm upgrade --install --namespace $NAMESPACE $1 . -f $CONFIG_FILE --set rails.image.tag=$2
+helm upgrade --install --namespace $NAMESPACE $1 . -f $CONFIG_FILE --set php.image.tag=$2

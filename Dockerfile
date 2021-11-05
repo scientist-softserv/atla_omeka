@@ -9,6 +9,7 @@ RUN apt-get -qq update && apt-get -qq -y --no-install-recommends install \
     libfreetype6-dev \
     libjpeg-dev \
     libjpeg62-turbo-dev \
+    libmagickcore-dev \
     libmagickwand-dev \
     libmcrypt-dev \
     libmemcached-dev \
@@ -30,9 +31,9 @@ RUN pecl install mcrypt-1.0.4 && pecl install imagick && \
       exif \
     && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
-    docker-php-ext-enable exif
+    docker-php-ext-enable exif imagick mcrypt
 
-COPY . /var/www/html
+COPY . /var/www/html/exhibitions
 COPY ./imagemagick-policy.xml /etc/ImageMagick/policy.xml
 
 CMD ["apache2-foreground"]

@@ -41,12 +41,9 @@ spec:
           imagePullPolicy: IfNotPresent
           # Use sub-path for individual folders
           volumeMounts:
-            - mountPath: /app/public/assets
+            - mountPath: /var/www/html/exhibitions/files
               name: shared
-              subPath: assets
-            - mountPath: /app/system
-              name: shared
-              subPath: system
+              subPath: omeka
           readinessProbe:
             tcpSocket:
               port: 80
