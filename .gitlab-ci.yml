@@ -30,7 +30,7 @@ staging:
     - export KUBECONFIG=$KUBECONFIG_ATLA
     - "keybase status | grep 'Logged in:     no' && keybase oneshot"
     - ./chart/bin/decrypt staging
-    - ./chart/bin/deploy staging $CI_COMMIT_SHORT_SHA
+    - ./chart/bin/deploy omeka $CI_COMMIT_SHORT_SHA staging-values.yaml
   after_script:
     - rm -f ./chart/*-values.yaml
     - keybase logout
@@ -47,7 +47,7 @@ production:
     - export KUBECONFIG=$KUBECONFIG_ATLA
     - "keybase status | grep 'Logged in:     no' && keybase oneshot"
     - ./chart/bin/decrypt production
-    - ./chart/bin/deploy production $CI_COMMIT_SHORT_SHA
+    - ./chart/bin/deploy omeka  $CI_COMMIT_SHORT_SHA production-values.yaml
   after_script:
     - rm -f ./chart/*-values.yaml
     - keybase logout
