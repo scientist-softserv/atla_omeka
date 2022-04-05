@@ -21,24 +21,32 @@ build:
   tags:
     - local
 
-production-new:
+staging:
   stage: deploy
-  only:
-    refs:
-      - main
-  variables:
-    DEPLOY_IMAGE: $CI_REGISTRY_IMAGE
-    DEPLOY_TAG: $CI_COMMIT_SHORT_SHA
-    WORKER_IMAGE: $CI_REGISTRY_IMAGE/worker
-    HELM_EXPERIMENTAL_OCI: 1
-    HELM_RELEASE_NAME: hyrax-production
-    KUBE_NAMESPACE: production
-    HELM_EXTRA_ARGS: >
-      --values ops/production-deploy.yaml
+  type: deploy
   script:
     - export KUBECONFIG=$KUBECONFIG_ATLA
-    - envsubst < ops/production-deploy.tmpl.yaml > ops/production-deploy.yaml
-    - ./bin/helm_deploy production production
+    - "keybase status | grep 'Logged in:     no' && keybase oneshot"
+    - ./chart/bin/decrypt staging
+    - ./chart/bin/deploy staging $CI_COMMIT_SHORT_SHA
+  after_script:
+    - rm -f ./chart/*-values.yaml
+    - keybase logout
+  when: manual
   tags:
     - local
+
+production:
+  stage: deploy
+  type: deploy
+  script:
+    - export KUBECONFIG=$KUBECONFIG_ATLA
+    - "keybase status | grep 'Logged in:     no' && keybase oneshot"
+    - ./chart/bin/decrypt production
+    - ./chart/bin/deploy production $CI_COMMIT_SHORT_SHA
+  after_script:
+    - rm -f ./chart/*-values.yaml
+    - keybase logout
   when: manual
+  tags:
+    - local
