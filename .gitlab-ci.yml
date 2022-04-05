@@ -25,7 +25,7 @@ staging:
   stage: deploy
   type: deploy
   variables:
-    - NAMESPACE: staging
+    NAMESPACE: staging
   script:
     - export KUBECONFIG=$KUBECONFIG_ATLA
     - "keybase status | grep 'Logged in:     no' && keybase oneshot"
@@ -42,7 +42,7 @@ production:
   stage: deploy
   type: deploy
   variables:
-    - NAMESPACE: production
+    NAMESPACE: production
   script:
     - export KUBECONFIG=$KUBECONFIG_ATLA
     - "keybase status | grep 'Logged in:     no' && keybase oneshot"
