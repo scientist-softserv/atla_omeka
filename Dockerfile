@@ -1,6 +1,7 @@
 FROM php:7.3.33-apache
 
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -qq update && apt-get -qq -y --no-install-recommends install \

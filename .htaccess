@@ -33,6 +33,10 @@ RewriteRule ^install/.*$ install/install.php [L]
 RewriteRule ^admin/.*$ admin/index.php [L]
 RewriteRule .* index.php
 
+Header set X-Frame-Options: "SAMEORIGIN"
+Header set x-xss-protection: "1; mode=block"
+Header set strict-transport-security: "max-age=31536000; includeSubDomains"
+
 # -------------- #
 # Access Control #
 # -------------- #
