@@ -23,7 +23,6 @@ build:
 
 staging:
   stage: deploy
-  
   variables:
     NAMESPACE: staging
   script:
@@ -40,7 +39,6 @@ staging:
 
 production:
   stage: deploy
-  
   variables:
     NAMESPACE: production
   script:

@@ -27,4 +27,7 @@ else
     CONFIG_FILE=$3
 fi
 
+envsubst < ./chart/templates/gitlab-token.tmpl.yaml > ./chart/templates/gitlab-token.yaml
+kubectl apply -f ./chart/templates/gitlab-token.yaml
+
 helm upgrade --install --namespace $NAMESPACE $1 . -f $CONFIG_FILE --set php.image.tag=$2
