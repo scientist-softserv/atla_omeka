@@ -22,7 +22,7 @@ services:
     depends_on:
       - db
     build: ./
-    image: registry.gitlab.com/notch8/atla_omeka:${TAG:-latest}
+    image: ghcr.io/scientist-softserve/atla_omeka:${TAG:-latest}
     volumes:
       - ./:/var/www/html
     ports:
